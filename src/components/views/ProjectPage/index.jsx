@@ -1,4 +1,3 @@
-//ProjectPage Index.js
 
 import React from 'react'
 import { useParams } from 'react-router-dom'
@@ -16,6 +15,7 @@ export const ProjectPage = ({ work }) => {
   })
 
   const { name, header, banner, roles, content} = project
+  const bannerUrl = `https:${banner.fields.file.url}`
 
   return (
     <Pane
@@ -24,6 +24,9 @@ export const ProjectPage = ({ work }) => {
       justifyContent='center'
       alignItems='center'
     >
+      <Pane>
+        <img src={bannerUrl} alt={name}></img>
+      </Pane>
       <Info
         title={name}
         roles={roles}
@@ -32,8 +35,6 @@ export const ProjectPage = ({ work }) => {
       {
         content.map(({ sys, fields }, index) => {
           const { contentType: { sys: { id: contentId } } } = sys
-          console.log(contentId)
-          // return filterContent({ id, fields, index })
           return <Content key={`content-${index}`} contentId={contentId} fields={fields} />
         })
       }
