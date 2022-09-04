@@ -15,7 +15,6 @@ export const ProjectPage = ({ work }) => {
   })
 
   const { name, header, banner, roles, content} = project
-  const bannerUrl = `https:${banner.fields.file.url}`
 
   return (
     <Pane
@@ -24,9 +23,9 @@ export const ProjectPage = ({ work }) => {
       justifyContent='center'
       alignItems='center'
     >
-      <Pane>
-        <img src={bannerUrl} alt={name}></img>
-      </Pane>
+      <Banner 
+        banner={banner} 
+      />
       <Info
         title={name}
         roles={roles}
