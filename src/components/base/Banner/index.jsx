@@ -1,9 +1,15 @@
 import React from 'react'
-import { Text } from 'evergreen-ui'
+import { Pane, Text } from 'evergreen-ui'
 
-export const Banner = (fields) => {
+export const Banner = ({banner}) => {
+
+  const url = `https:${banner.fields.file.url}`
+  const alt = banner.fields.description
+
   return (
-    <Text>Banner</Text>
+    <Pane>
+    <img src={url} alt={alt}></img>
+  </Pane>
   
   )
 }
