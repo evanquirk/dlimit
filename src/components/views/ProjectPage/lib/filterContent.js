@@ -1,27 +1,27 @@
 
 import React from 'react'
-import { Banner, DoubleSpan, Film, TripleSpan, Vertical, Video } from '../../../base'
+import { Banner, DoubleSpan, Film, SingleSpan, TripleSpan, Vertical, Video } from '../../../base'
 
-const filterContent = ({ id, fields, index }) => {
+const filterContent = ({ sys, fields }) => {
+  const id = sys.contentType.sys.id
 
   switch (id) {
-    // case 'banner':
-    //   return <Banner key={`element-${index}`} fields={fields} />
+    case 'banner':
+      return <Banner fields={fields} />
     case 'doubleSpanImage':
-      return <DoubleSpan key={`element-${index}`} fields={fields} />
-    // case 'film':
-    //   return <Film key={`element-${index}`} fields={fields} /> 
-    // case 'singleSpan':
-    //   return <SingleSpan key={`element-${index}`} fields={fields} />
+      return <DoubleSpan fields={fields} />
+    case 'film':
+      return <Film fields={fields} /> 
+    case 'singleSpan':
+      return <SingleSpan fields={fields} />
     case 'tripleSpan':
-      return <TripleSpan key={`element-${index}`} fields={fields} />
+      return <TripleSpan fields={fields} />
     case 'vertical':
-      return <Vertical key={`element-${index}`} fields={fields} />
+      return <Vertical fields={fields} />
     case 'video':
-      return <Video key={`element-${index}`} fields={fields} />
-      
+      return <Video fields={fields} />
     default:
-      return <div key={`element-${index}`}></div>
+      return <div></div>
   }
 }
 
