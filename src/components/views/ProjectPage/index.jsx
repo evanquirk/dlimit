@@ -33,10 +33,9 @@ export const ProjectPage = ({ work }) => {
       />
       {
         content.map(({ sys, fields }, index) => {
-          const { contentType: { sys: { id: contentId } } } = sys
-          return <Content key={`content-${index}`} contentId={contentId} fields={fields} />
-        })
+          return filterContent({sys, fields, index})
       }
+        )}
     </Pane>
 
   )
