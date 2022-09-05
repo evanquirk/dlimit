@@ -3,6 +3,7 @@ import { Pane } from 'evergreen-ui'
 
 export const DoubleSpan = ({fields}) => {
   const { groupName, left, right } = fields
+  
   const leftImage = {
     title: left.fields.title,
     desc: left.fields.description,
@@ -25,7 +26,7 @@ export const DoubleSpan = ({fields}) => {
         src={rightImage.url}
         alt={rightImage.desc}
         id='2r'
-        />
+      />
     </Pane>
   )
 }
