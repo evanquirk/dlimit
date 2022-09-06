@@ -1,3 +1,6 @@
+// doubleSpanImage component
+// TODO - Refactor to make DRY (top down?)
+
 import React from 'react'
 import { Pane } from 'evergreen-ui'
 

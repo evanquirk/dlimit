@@ -1,8 +1,8 @@
 // Film Component
-// TODO - Make Dialogue for full screen image pop-up.
+// TODO - Make Dialogue for full screen image pop-up. Use onClick.
 
 import React from 'react'
-import { Pane, RepeatIcon } from 'evergreen-ui'
+import { Pane } from 'evergreen-ui'
 
 export const Film = ({fields}) => {
   const photos = fields.photos
@@ -11,8 +11,9 @@ export const Film = ({fields}) => {
     <Pane
       display='grid'
       gridTemplateColumns='repeat(4, 1fr)'
-      gap='10px'
+      gap='25px'
       id='film'
+      placeSelf='center'
     >
       { 
         photos.map((photo, index) => {
@@ -22,7 +23,7 @@ export const Film = ({fields}) => {
               <img
                 src={`https:${url}`}
                 alt={description}
-                id={`f${index}`}
+                key={`f${index}`}
                 // onClick={}
               />
             )
