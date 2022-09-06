@@ -1,3 +1,6 @@
+// SingleSpan Component
+// TODO - Styling. Look into Top Down Approach to keep code DRY
+
 import React from 'react'
 import { Pane } from 'evergreen-ui'
 
