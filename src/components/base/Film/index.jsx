@@ -1,8 +1,31 @@
-import React from 'react'
-import { Text } from 'evergreen-ui'
+// Film Component
+// TODO - Make Dialogue for full screen image pop-up. Provide CSS to wrap images at 4 x n 
 
-export const Film = (fields) => {
+import React from 'react'
+import { Pane } from 'evergreen-ui'
+
+export const Film = ({fields}) => {
+  const photos = fields.photos
+
   return (
-    <Text>Film</Text>
+    <Pane
+      display='flex'
+      flex-flow='wrap'
+      id='film'
+    >
+      { 
+        photos.map((photo, index) => {
+          const { fields: { title, description, file: { url } } } = photo;
+            
+          return (
+              <img
+                src={`https:${url}`}
+                alt={description}
+                id={`f${index}`}
+              />
+            )
+        }) 
+      }
+    </Pane>
   )
 }
