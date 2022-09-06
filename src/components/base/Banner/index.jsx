@@ -1,3 +1,5 @@
+// Banner Component
+
 import React from 'react'
 import { Pane, Text } from 'evergreen-ui'
 
@@ -8,8 +10,11 @@ export const Banner = ({banner}) => {
 
   return (
     <Pane>
-    <img src={url} alt={alt}></img>
-  </Pane>
+      <img 
+        src={url} 
+        alt={alt}
+      />
+    </Pane>
   
   )
 }
