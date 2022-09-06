@@ -1,10 +1,12 @@
 import React, { Suspense, useEffect, useState } from 'react'
-import useContentful from './hooks/useContentful'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useNavigate } from 'react-router-dom'
 import Normalize from 'react-normalize'
-import { Footer, Header, ProjectTypes } from './components/partials'
+import { Dialog, Button } from 'evergreen-ui'
+
 import { Loader } from './components/base'
+import { Footer, Header, ProjectTypes } from './components/partials'
 import { About, Contact, NotFound, ProjectPage, Work } from './components/views'
+import useContentful from './hooks/useContentful'
 
 const App = () => {
   const { getWork } = useContentful()
@@ -25,8 +27,9 @@ const App = () => {
   }, [])
 
   useEffect(() => {
-    console.log({work})
   }, [work])
+
+
 
 if (work) {
   return (
