@@ -4,7 +4,7 @@
 import React from 'react'
 import { Pane } from 'evergreen-ui'
 
-export const TripleSpan = (fields) => {
+export const TripleSpan = ({fields}) => {
   
   const { groupName, left, center, right, tall } = fields
   
@@ -27,7 +27,13 @@ export const TripleSpan = (fields) => {
     }
   
     return (
-      <Pane>
+      <Pane
+        display='grid'
+        gridTemplateColumns='repeat(3, 1fr)'
+        gap='25px'
+        id='film'
+        placeSelf='center'
+      >
         <img
           src={leftImage.url}
           alt={leftImage.desc}
