@@ -1,10 +1,12 @@
 
 import React from 'react'
 import { useParams } from 'react-router-dom'
+import { Pane } from 'evergreen-ui'
+
+import { Banner } from '../../base'
+import { Info } from './components'
+
 import filterContent from './lib/filterContent'
-import { Pane, Text } from 'evergreen-ui'
-import { Banner, DoubleSpan, Film, Loader, SingleSpan, TitleCard, TripleSpan, Vertical, Video } from '../../base'
-import { Content, Info } from './components'
 
 
 export const ProjectPage = ({ work }) => {
@@ -23,14 +25,18 @@ export const ProjectPage = ({ work }) => {
       justifyContent='center'
       alignItems='center'
     >
-      <Banner 
-        banner={banner} 
-      />
-      <Info
-        title={name}
-        roles={roles}
-        description={header}
-      />
+      {banner &&
+        <Banner 
+          banner={banner} 
+        />
+      }
+      {roles &&
+        <Info
+          title={name}
+          roles={roles}
+          description={header}
+        />
+      }
       {
         content.map(({ sys, fields }, index) => {
           return filterContent({sys, fields, index})
