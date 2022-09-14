@@ -1,4 +1,4 @@
-// Content Component for Project Page View
+/* // Content Component for Project Page View
 
 import React from 'react'
 import { Composition } from 'atomic-layout'
@@ -72,5 +72,5 @@ export const Content = ({ contentId, fields }) => {
 const Footer = (({ content }) => (
   <Text>{content}</Text>
 ))
-*/
 }
+*/
