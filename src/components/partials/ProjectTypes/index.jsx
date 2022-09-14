@@ -4,24 +4,33 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Pane } from 'evergreen-ui'
 
-export const ProjectTypes = () => {
+export const ProjectTypes = ({style}) => {
+
+  const { home, graphics, videos, objects, photos } = style
+
   return (
     <Pane display='flex'>
-      <Pane flex={1} justifyContent='center' display='flex'>
+      <Pane 
+        flex={1} 
+        justifyContent='center' 
+        display='flex' 
+        marginTop='50px' 
+        marginBottom='20px'
+      >
         <Link to='/'>
-          <Button>All Work</Button>
+          <Button background={home}>All Work</Button>
         </Link>
         <Link to='/graphics'>
-          <Button>Graphics</Button>
+          <Button background={graphics}>Graphics</Button>
         </Link>
         <Link to='/videos'>
-          <Button>Videos</Button>
+          <Button background={videos}>Videos</Button>
         </Link>
         <Link to='/objects'>
-          <Button>Objects</Button>
+          <Button background={objects}>Objects</Button>
         </Link>
         <Link to='/photos'>
-          <Button>Photos</Button>
+          <Button background={photos}>Photos</Button>
         </Link>
       </Pane>
     </Pane>
