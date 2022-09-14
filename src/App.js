@@ -9,8 +9,33 @@ import { About, Contact, NotFound, ProjectPage, Work } from './components/views'
 import useContentful from './hooks/useContentful'
 
 const App = () => {
-  const { getWork } = useContentful()
+  const { getWork, getStyle } = useContentful()
   const [work, setWork] = useState(null)
+  const [style, setStyle] = useState(null)
+
+  const [width, setWindowWidth] = useState(0)
+
+  useEffect(async () => {
+    const res = await getStyle()
+    const style = res
+    return style, 
+    setStyle(style)
+  })
+  
+  useEffect(() => {
+    updateDimensions();
+
+    window.addEventListener("resize", updateDimensions)
+
+    return () => window.removeEventListener("resize", updateDimensions)
+  }, [])
+  
+  const updateDimensions = () => {
+    const width = window.innerWidth
+    setWindowWidth(width)
+    console.log(width)
+  }
+
 
   useEffect(async () => {
     const res = await getWork()
@@ -26,7 +51,10 @@ const App = () => {
     setWork(work)
   }, [])
 
+
+
   useEffect(() => {
+    console.log(work)
   }, [work])
 
 
@@ -35,8 +63,8 @@ if (work) {
   return (
     <>
       <Normalize />
-      <Header />
-      <ProjectTypes />
+      <Header style={style}/>
+      <ProjectTypes style={style}/>
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path='*' element={<NotFound />} />
