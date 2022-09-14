@@ -4,13 +4,13 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
 
-export const Video = (fields) => {
-
+export const Video = ({fields}) => {
+const { name, url, footer } = fields
   return (
-    <ReactPlayer
-      url='https://youtu.be/7sDY4m8KNLc'
-      width='75.8%'
-      height='900px'
-    />
+      <ReactPlayer
+        url={url}
+        width='75.8%'
+        height='900px'
+      />
   )
 }
