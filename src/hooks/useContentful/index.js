@@ -31,6 +31,27 @@ const useContentful = () => {
     }
   }
 
+  const getStyle = async () => {
+    try {
+      const entries = await client.getEntries({
+        content_type: 'styles',
+        select: 'fields'
+      })
+
+      const sanitizedEntries = entries.items.map(({ fields }) => {
+        const { id, } = fields
+
+        return {
+          ...fields
+        }
+      })
+
+      return sanitizedEntries
+    } catch (err) {
+      console.log(`Error fetching work: ${err}`)
+    }
+  }
+
   const getAbout = async () => {
     try {
       const { items } = await client.getEntries({
@@ -52,7 +73,8 @@ const useContentful = () => {
   return {
     client,
     getWork,
-    getAbout
+    getAbout,
+    getStyle
   }
 }
 
