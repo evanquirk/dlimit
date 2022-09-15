@@ -1,6 +1,11 @@
+// App.js
+// TODO - Complete Responsive Design Top Level. Remove unnecessary hooks or state
+
 import React, { Suspense, useEffect, useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import Normalize from 'react-normalize'
+import { useMediaQuery } from 'react-responsive'
+
 import { Dialog, Button } from 'evergreen-ui'
 
 import { Loader } from './components/base'
@@ -8,13 +13,15 @@ import { Footer, Header, ProjectTypes } from './components/partials'
 import { About, Contact, NotFound, ProjectPage, Work } from './components/views'
 import useContentful from './hooks/useContentful'
 
+
+
 const App = () => {
   const { getWork, getStyle } = useContentful()
   const [work, setWork] = useState(null)
   const [style, setStyle] = useState(null)
-
   const [width, setWindowWidth] = useState(0)
-
+  
+  
   useEffect(async () => {
     const res = await getStyle()
     const style = res
@@ -26,7 +33,7 @@ const App = () => {
     updateDimensions();
 
     window.addEventListener("resize", updateDimensions)
-
+    
     return () => window.removeEventListener("resize", updateDimensions)
   }, [])
   
@@ -35,11 +42,11 @@ const App = () => {
     setWindowWidth(width)
     console.log(width)
   }
-
-
+  
+  
   useEffect(async () => {
     const res = await getWork()
-
+    
     const work = res.reduce((acc, project) => {
       const { type } = project
       acc.all.push(project)
@@ -56,14 +63,19 @@ const App = () => {
   useEffect(() => {
     console.log(work)
   }, [work])
-
-
-
-if (work) {
-  return (
-    <>
+  
+  
+  const mediaQueries = () => {
+    const isLarge = useMediaQuery({query: '(min-width: 1224px)'})
+    const isMediun = useMediaQuery({ query: '(min-width: 1824px)' })
+    const isSmall = useMediaQuery({ query: '(max-width: 1224px)' })
+  }
+  
+  if (work) {
+    return (
+      <>
       <Normalize />
-      <Header style={style}/>
+      {mediaQueries.isLarge && <Header style={style}/>  }
       <ProjectTypes style={style}/>
       <Suspense fallback={<Loader />}>
         <Routes>
