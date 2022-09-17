@@ -51,9 +51,15 @@ const AboutInfo = ({ about }) => {
   return (
     <>
       <Heading size={900} is='h1' margin='1em'>{name}</Heading>
+      
       <Pane is='img' src={photoSource} alt={title} />
+      
       <Paragraph>{bio}</Paragraph>
-      <Link href={mailTo}>Say Hello</Link>
+      
+      <Link href={mailTo}>
+        Say Hello
+      </Link>
+
       {socials.map((social, index) => <SocialLinks key={`social-${index}`} info={social} />)}
     </>
   )
