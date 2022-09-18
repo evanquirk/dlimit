@@ -75,7 +75,7 @@ const App = () => {
     return (
       <>
       <Normalize />
-      {mediaQueries.isLarge && <Header style={style}/>  }
+      <Header style={style}/>
       <ProjectTypes style={style}/>
       <Suspense fallback={<Loader />}>
         <Routes>
