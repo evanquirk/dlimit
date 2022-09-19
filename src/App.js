@@ -6,14 +6,26 @@ import { Routes, Route, useNavigate } from 'react-router-dom'
 import Normalize from 'react-normalize'
 import { useMediaQuery } from 'react-responsive'
 
-import { Dialog, Button } from 'evergreen-ui'
+import { ThemeProvider } from 'styled-components'
+
+import { GlobalStyles } from './components/styles/Global.styles'
 
 import { Loader } from './components/base'
 import { Footer, Header, ProjectTypes } from './components/partials'
 import { About, Contact, NotFound, ProjectPage, Work } from './components/views'
 import useContentful from './hooks/useContentful'
 
-
+const theme = {
+  light: {
+    primary: 'white',
+    text: 'black',
+    about: '',
+    graphics: '',
+    objects: '',
+    photos: '',
+    videos: ''
+  }
+}
 
 const App = () => {
   const { getWork, getStyle } = useContentful()
@@ -46,11 +58,10 @@ const App = () => {
   
   useEffect(async () => {
     const res = await getWork()
-    
     const work = res.reduce((acc, project) => {
       const { type } = project
-      acc.all.push(project)
 
+      acc.all.push(project)
       acc[type].push(project)
       return acc
     }, { all: [], videos: [], photos: [], objects: [], graphics: [] })
@@ -58,38 +69,30 @@ const App = () => {
     setWork(work)
   }, [])
 
-
-
   useEffect(() => {
     console.log(work)
   }, [work])
-  
-  
-  const mediaQueries = () => {
-    const isLarge = useMediaQuery({query: '(min-width: 1224px)'})
-    const isMediun = useMediaQuery({ query: '(min-width: 1824px)' })
-    const isSmall = useMediaQuery({ query: '(max-width: 1224px)' })
-  }
+
   
   if (work) {
     return (
-      <>
-      <Normalize />
-      <Header style={style}/>
-      <ProjectTypes style={style}/>
-      <Suspense fallback={<Loader />}>
-        <Routes>
-          <Route path='*' element={<NotFound />} />
-          <Route path='/' element={<Work work={work} />} />
-          <Route path='about' element={<About />} />
-          <Route path='contact' element={<Contact />} />
-          <Route path='home' element={<Work work={work} />} />
-          <Route path='/:type' element={<Work work={work} />} />
-          <Route path='/:type/:slug' element={<ProjectPage work={work} />} />
-        </Routes>
-      </Suspense>
-      <Footer />
-    </>
+      <ThemeProvider theme={theme}>
+        <Normalize />
+        <Header style={style}/>
+        <ProjectTypes style={style}/>
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            <Route path='*' element={<NotFound />} />
+            <Route path='/' element={<Work work={work} />} />
+            <Route path='about' element={<About />} />
+            <Route path='contact' element={<Contact />} />
+            <Route path='home' element={<Work work={work} />} />
+            <Route path='/:type' element={<Work work={work} />} />
+            <Route path='/:type/:slug' element={<ProjectPage work={work} />} />
+          </Routes>
+        </Suspense>
+        <Footer />
+      </ThemeProvider>
   )
 } else {
   return <Loader />

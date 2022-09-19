@@ -2,19 +2,25 @@
 
 import React from 'react'
 import { Routes, Route, Outlet, Link } from 'react-router-dom'
-import { Button, Pane } from 'evergreen-ui'
+import { Pane } from 'evergreen-ui'
+import { Button } from '../../../styles/Button.styles'
 
 export default function Navigation () {
+
   return (
-    <Pane>
-      <Link to='/'>
-        <Button height={30} width={150} margin={10}>Work</Button>
+    <Pane
+      display='grid'
+      gridTemplateColumns='auto auto auto'
+      gridGap='1em'
+      >
+      <Link to='/' style={{textDecoration: 'none'}}>
+        <Button bg={'black'} color={'white'} >WORK</Button>
       </Link>
-      <Link to='/about'>
-        <Button height={30} width={150} margin={10}>About</Button>
+      <Link to='/about' style={{textDecoration: 'none'}}>
+        <Button >ABOUT</Button>
       </Link>
-      <Link to='/contact'>
-        <Button height={30} width={150} margin={10}>Contact</Button>
+      <Link to='/contact' style={{textDecoration: 'none'}}>
+        <Button >CONTACT</Button>
       </Link>
     </Pane>
   )
