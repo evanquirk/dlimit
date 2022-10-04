@@ -2,7 +2,8 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Button, Pane } from 'evergreen-ui'
+import { Pane } from 'evergreen-ui'
+import { ProjectButton } from '../../styles/Button.styles'
 
 export const ProjectTypes = ({style}) => {
 
@@ -13,24 +14,26 @@ export const ProjectTypes = ({style}) => {
       <Pane 
         flex={1} 
         justifyContent='center' 
-        display='flex' 
+        display='grid'
+        gridTemplateColumns='auto auto auto auto auto'
+        gridGap='2em'
         marginTop='50px' 
         marginBottom='20px'
       >
-        <Link to='/'>
-          <Button background={home}>All Work</Button>
+        <Link to='/' style={{textDecoration: 'none'}}>
+          <ProjectButton background-color={home}>WORK</ProjectButton>
         </Link>
-        <Link to='/graphics'>
-          <Button background={graphics}>Graphics</Button>
+        <Link to='/graphics' style={{textDecoration: 'none'}}>
+          <ProjectButton background-color={graphics}>GRAPHICS</ProjectButton>
         </Link>
-        <Link to='/videos'>
-          <Button background={videos}>Videos</Button>
+        <Link to='/videos' style={{textDecoration: 'none'}}>
+          <ProjectButton background-color={videos}>VIDEOS</ProjectButton>
         </Link>
-        <Link to='/objects'>
-          <Button background={objects}>Objects</Button>
+        <Link to='/objects' style={{textDecoration: 'none'}}>
+          <ProjectButton background-color={objects}>OBJECTS</ProjectButton>
         </Link>
-        <Link to='/photos'>
-          <Button background={photos}>Photos</Button>
+        <Link to='/photos' style={{textDecoration: 'none'}}>
+          <ProjectButton background-color={photos}>PHOTOS</ProjectButton>
         </Link>
       </Pane>
     </Pane>
