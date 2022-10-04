@@ -11,7 +11,7 @@ export default function Navigation () {
     <Pane
       display='grid'
       gridTemplateColumns='auto auto auto'
-      gridGap='1em'
+      gridGap='2em'
       >
       <Link to='/' style={{textDecoration: 'none'}}>
         <Button bg={'black'} color={'white'} >WORK</Button>
