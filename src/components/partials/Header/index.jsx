@@ -10,7 +10,7 @@ export const Header = ({style}) => {
 
   return (
     <Pane height={100} background='black' display='flex' alignItems='center' borderBottom='1px solid black'>
-      <Pane flex={1} alignItems='center' display='flex' marginLeft={100} marginRight={90}>
+      <Pane flex={1} alignItems='center' display='flex' marginLeft={90} marginRight={90}>
         <Pane flex={1} alignItems='center' display='flex'>
           <Title />
         </Pane>
