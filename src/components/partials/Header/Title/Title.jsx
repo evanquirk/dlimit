@@ -7,7 +7,11 @@ export default function Title () {
   return (
     <Pane>
       <Link to={{ pathname: '/' }} style={{textDecoration: 'none'}}>
-        <Button>DENIS</Button>
+        <img 
+          src="/name.svg"
+          height='90px'
+          width='auto'
+        />
       </Link>
     </Pane>
   )
