@@ -33,6 +33,8 @@ export const About = () => {
       justifyContent='center'
       alignItems='center'
       alignContent='center'
+      width='59%'
+      margin='auto'
     >
       {!about.error
         ? (about.bio ? <AboutInfo about={about} /> : null)
@@ -54,9 +56,20 @@ const AboutInfo = ({ about }) => {
       
       <Pane is='img' src={photoSource} alt={title} />
       
-      <Paragraph>{bio}</Paragraph>
+      <Paragraph 
+        paddingTop='3%'
+        paddingBottom='1%'
+      >
+        {bio}
+      </Paragraph>
       
-      <Link href={mailTo}>
+      <Link 
+        href={mailTo}
+        marginBottom='3%'
+        padding='1%'
+        fontSize='large'
+        border='1px blue solid'
+      >
         Say Hello
       </Link>
 

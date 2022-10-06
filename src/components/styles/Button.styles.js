@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 export const Button = styled.div`
   font-family: 'Inter', sans-serif;
-  font-weight: 200;
-  font-size: 2em;
+  font-weight: 300;
+  font-size: 1.8em;
   background-color: ${({bg}) => bg || '#000'};
   color: ${({color}) => color || '#fff'};
   &:hover {
@@ -14,5 +14,6 @@ export const Button = styled.div`
 export const ProjectButton = styled(Button)`
   background-color: ${({bg}) => bg || '#fff'};
   color: ${({color}) => color || '#000'};
-  font-size: 1.8em;
+  font-size: 2.2em;
+  font-weight: 400;
 `

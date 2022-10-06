@@ -9,8 +9,8 @@ export const SocialLinks = ({ info }) => {
   return (
     <Link href={link} target='_blank' rel='noopener noreferrer'>
       {iconLink ? 
-      <Pane is='img' src={iconLink} alt={name} width={100}/> :
-      <Pane is='img' src={`https:${url}`} alt={name} width={100} />
+      <Pane is='img' src={iconLink} alt={name} width={80}/> :
+      <Pane is='img' src={`https:${url}`} alt={name} width={80} />
       }
     </Link>
   )

@@ -11,7 +11,7 @@ export default function Navigation () {
     <Pane
       display='grid'
       gridTemplateColumns='auto auto auto'
-      gridGap='2em'
+      gridGap='3em'
       >
       <Link to='/' style={{textDecoration: 'none'}}>
         <Button bg={'black'} color={'white'} >WORK</Button>
@@ -19,7 +19,13 @@ export default function Navigation () {
       <Link to='/about' style={{textDecoration: 'none'}}>
         <Button >ABOUT</Button>
       </Link>
-      <Link to='/contact' style={{textDecoration: 'none'}}>
+      <Link to='#'
+            onClick={(e) => {
+              window.location = "mailto:hello@dlimitovski.com";
+              e.preventDefault();
+            }} 
+            style={{textDecoration: 'none'}}
+          >
         <Button >CONTACT</Button>
       </Link>
     </Pane>

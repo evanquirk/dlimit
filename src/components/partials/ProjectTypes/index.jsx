@@ -16,9 +16,9 @@ export const ProjectTypes = ({style}) => {
         justifyContent='center' 
         display='grid'
         gridTemplateColumns='auto auto auto auto auto'
-        gridGap='2em'
-        marginTop='50px' 
-        marginBottom='20px'
+        gridGap='4.2em'
+        marginTop='5em' 
+        marginBottom='3em'
       >
         <Link to='/' style={{textDecoration: 'none'}}>
           <ProjectButton background-color={home}>WORK</ProjectButton>
