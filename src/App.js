@@ -54,7 +54,8 @@ const App = () => {
     setWindowWidth(width)
     console.log(width)
   }
-  
+
+
   
   useEffect(async () => {
     const res = await getWork()
@@ -79,7 +80,6 @@ const App = () => {
       <ThemeProvider theme={theme}>
         <Normalize />
         <Header style={style}/>
-        <ProjectTypes style={style}/>
         <Suspense fallback={<Loader />}>
           <Routes>
             <Route path='*' element={<NotFound />} />

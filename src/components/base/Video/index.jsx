@@ -9,8 +9,7 @@ const { name, url, footer } = fields
   return (
       <ReactPlayer
         url={url}
-        width='75.8%'
-        height='900px'
+        width='100%'
       />
   )
 }

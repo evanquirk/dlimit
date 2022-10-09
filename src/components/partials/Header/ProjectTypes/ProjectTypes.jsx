@@ -3,7 +3,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Pane } from 'evergreen-ui'
-import { ProjectButton } from '../../styles/Button.styles'
+import { ProjectButton } from '../../../styles/Button.styles'
 
 export const ProjectTypes = ({style}) => {
 
