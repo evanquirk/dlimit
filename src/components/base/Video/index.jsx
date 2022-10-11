@@ -3,6 +3,7 @@
 
 import React from 'react'
 import ReactPlayer from 'react-player'
+import { Pane } from 'evergreen-ui'
 
 export const Video = ({fields}) => {
 const { name, url, footer } = fields
@@ -10,6 +11,7 @@ const { name, url, footer } = fields
       <ReactPlayer
         url={url}
         width='100%'
-      />
+        height='47vh'
+        />
   )
 }
