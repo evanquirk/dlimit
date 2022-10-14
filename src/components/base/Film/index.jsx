@@ -10,10 +10,14 @@ export const Film = ({fields}) => {
   return (
     <Pane
       display='grid'
+      gap='1%'
       gridTemplateColumns='repeat(4, 1fr)'
-      gap='25px'
       id='film'
+      margin='auto'
       placeSelf='center'
+      alignContent='center'
+      width='80vw'
+      paddingTop='2%'
     >
       { 
         photos.map((photo, index) => {
@@ -24,6 +28,7 @@ export const Film = ({fields}) => {
                 src={`https:${url}`}
                 alt={description}
                 key={`f${index}`}
+                style={{width:'100%'}}
                 // onClick={}
               />
             )
