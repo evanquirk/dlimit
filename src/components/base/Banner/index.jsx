@@ -11,7 +11,7 @@ export const Banner = ({banner}) => {
       <img 
         src={url} 
         alt={alt}
-        width='100%'
+        style={{marginTop: '2%'}}
       />
   )
 }
