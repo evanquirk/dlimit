@@ -83,12 +83,12 @@ const App = () => {
         <Suspense fallback={<Loader />}>
           <Routes>
             <Route path='*' element={<NotFound />} />
-            <Route path='/' element={<Work work={work} />} />
+            <Route path='/' element={<Work work={work} style={style}/>} />
             <Route path='about' element={<About />} />
             <Route path='contact' element={<Contact />} />
-            <Route path='home' element={<Work work={work} />} />
-            <Route path='/:type' element={<Work work={work} />} />
-            <Route path='/:type/:slug' element={<ProjectPage work={work} />} />
+            <Route path='home' element={<Work work={work} style={style} />} />
+            <Route path='/:type' element={<Work work={work} style={style} />} />
+            <Route path='/:type/:slug' element={<ProjectPage work={work} style={style}/>} />
           </Routes>
         </Suspense>
         <Footer />
