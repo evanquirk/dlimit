@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { Suspense, useState, useEffect } from 'react'
 import { Link, Heading, Pane, Paragraph } from 'evergreen-ui'
+import { Loader } from '../../base/Loader'
 import useContentful from '../../../hooks/useContentful'
 import { SocialLinks }  from '../../partials'
 
@@ -52,6 +53,8 @@ const AboutInfo = ({ about }) => {
 
   return (
     <>
+    <Suspense fallback={<Loader />}>
+
       <Heading size={900} is='h1' margin='1em'>{name}</Heading>
       
       <Pane is='img' src={photoSource} alt={title} />
@@ -59,7 +62,7 @@ const AboutInfo = ({ about }) => {
       <Paragraph 
         paddingTop='3%'
         paddingBottom='1%'
-      >
+        >
         {bio}
       </Paragraph>
       
@@ -69,11 +72,12 @@ const AboutInfo = ({ about }) => {
         padding='1%'
         fontSize='large'
         border='1px blue solid'
-      >
+        >
         Say Hello
       </Link>
 
       {socials.map((social, index) => <SocialLinks key={`social-${index}`} info={social} />)}
+    </Suspense>
     </>
   )
 }
