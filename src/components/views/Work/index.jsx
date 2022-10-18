@@ -3,45 +3,46 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { TitleCard } from '../../base'
+import { ProjectTypes } from '../../partials/ProjectTypes/ProjectTypes'
 import { Pane } from 'evergreen-ui'
 
-export const Work = ({ work }) => {
+export const Work = ({ work, style }) => {
   const { type = 'all' } = useParams()
-
-  console.log('type',work[type])
+  
   let column
   work[type].length > 1 ? column='repeat(2, 1fr)' : column='repeat(1, 1fr)'
 
   return (
     <Pane
-      width='100%'
       display='flex'
-      alignContent='center'
+      flexDirection='column'
       justifyContent='center'
-      padding='auto'
-
-    >
-    <Pane
-      display='grid'
-      gridTemplateColumns={column}
-      gap='25px'
-      placeSelf='center'
+      alignItems='center'
+      width='90vw'
+      margin='auto'
       >
-      {work[type].map((project, index) => {
-        const { type, slug, card } = project
-        if (!type) {
-          return <></>
-        }
-        return (
-          <TitleCard
-          key={index}
-          type={type}
-          slug={slug}
-          fields={card.fields}
-          />
-          )})}
-    </Pane>
-    </Pane>
+      <ProjectTypes style={style}/>
+      <Pane
+        display='grid'
+        gridTemplateColumns={column}
+        gap='25px'
+        placeSelf='center'
+        >
+        {work[type].map((project, index) => {
+          const { type, slug, card } = project
+          if (!type) {
+            return <></>
+          }
+          return (
+            <TitleCard
+            key={index}
+            type={type}
+            slug={slug}
+            fields={card.fields}
+            />
+            )})}
+      </Pane>
+     </Pane>
 
   )
 }

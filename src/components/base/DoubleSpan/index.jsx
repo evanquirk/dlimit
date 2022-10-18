@@ -24,11 +24,13 @@ export const DoubleSpan = ({fields}) => {
         src={leftImage.url}
         alt={leftImage.desc}
         id='2l'
+        width='50%'
       />
       <img
         src={rightImage.url}
         alt={rightImage.desc}
         id='2r'
+        width='50%'
       />
     </Pane>
   )

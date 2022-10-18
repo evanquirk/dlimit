@@ -12,7 +12,11 @@ export function TitleCard ({ type, slug, fields }) {
     <Link to={{ pathname: `/${type}/${slug}` }}>
       <Pane>
         {fields && (
-          <img src={img} alt={title}/>
+          <img 
+            src={img} 
+            alt={title}
+            
+          />
         )}
       </Pane>
     </Link>

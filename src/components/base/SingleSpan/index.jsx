@@ -13,6 +13,7 @@ export const SingleSpan = ({fields}) => {
         src={`https:${file.url}`}
         alt={description}
         id='full'
+        width='100%'
       />
     </Pane>
   )

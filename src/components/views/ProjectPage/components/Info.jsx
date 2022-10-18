@@ -21,7 +21,9 @@ export const Info = ({ title, roles, description }) => {
       {({ Title, Roles, Description }) => (
         <>
         <Title>
-          <Heading>{title.toUpperCase()}</Heading>
+          <Heading size={900}>
+            {title.toUpperCase()}
+          </Heading>
         </Title>
         <Roles>
           {roles.map(({fields}) => {

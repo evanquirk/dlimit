@@ -1,10 +1,8 @@
 
 import React from 'react'
-import PropTypes from 'prop-types'
 import { withRouter } from 'react-router'
 import Title from './Title/Title'
 import Navigation from './Navigation/Navigation'
-import { ProjectTypes } from './ProjectTypes/ProjectTypes'
 import { Pane } from 'evergreen-ui'
 
 export const Header = ({style}) => {
@@ -21,7 +19,6 @@ export const Header = ({style}) => {
           </Pane>
         </Pane>
       </Pane>
-      <ProjectTypes style={style}/>
     </Pane>
 
   )

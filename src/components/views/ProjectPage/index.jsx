@@ -24,10 +24,12 @@ export const ProjectPage = ({ work }) => {
       flexDirection='column'
       justifyContent='center'
       alignItems='center'
+      width='80vw'
+      margin='auto'
     >
       {banner &&
         <Banner 
-          banner={banner} 
+          banner={banner}
         />
       }
       {roles &&
