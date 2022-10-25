@@ -6,6 +6,7 @@ import { SocialLinks }  from '../../partials'
 
 export const About = () => {
   const { getAbout } = useContentful()
+  const [isAboutLoading, setIsAboutLoading] = useState(false)
   const [about, setAbout] = useState({
     bio: '',
     email: '',
@@ -16,16 +17,24 @@ export const About = () => {
   })
 
   useEffect(async () => {
+    setIsAboutLoading(true)
     try {
       const response = await getAbout()
       setAbout(response)
+      setIsAboutLoading(false)
     } catch (error) {
       setAbout({ error: error.message })
+      setIsAboutLoading(false)
     }
   }, [])
 
   useEffect(() => {
+    console.log(about)
   }, [about])
+
+  if (isAboutLoading) {
+    return <Loader />;
+  }
 
   return (
     <Pane
