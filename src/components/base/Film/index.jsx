@@ -42,19 +42,21 @@ export const Film = ({fields}) => {
           onClick={ () => openImageViewer(index) }
           width="100%"
           key={ index }
-          style={{ margin: '2%' }}
+          style={{ margin: '2%', cursor: 'pointer'}}
           alt={`${photo.fields.description}`}
         />
       ))}
 
       {isViewerOpen && (
+        <>
         <ImageViewer
           src={ photoArr }
           currentIndex={ currentImage }
           disableScroll={ false }
           closeOnClickOutside={ true }
           onClose={ closeImageViewer }
-        />
+          />
+        </>
       )}
     </ Pane>
   );
