@@ -1,4 +1,4 @@
-import {createGlobalStyle} from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Inter:wght@100;200;300;400&family=Londrina+Outline&display=swap');
@@ -20,4 +20,4 @@ export const GlobalStyles = createGlobalStyle`
 
   a:active { text-decoration: none; }
 
-`
+`;
