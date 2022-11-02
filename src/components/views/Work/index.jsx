@@ -13,19 +13,18 @@ export const Work = ({ work, style }) => {
   work[type].length > 1 ? column='repeat(2, 1fr)' : column='repeat(1, 1fr)'
 
   return (
+    <Pane>
     <Pane
       display='flex'
       flexDirection='column'
       justifyContent='center'
       alignItems='center'
-      width='90vw'
       margin='auto'
       >
       <ProjectTypes style={style}/>
       <Pane
         display='grid'
         gridTemplateColumns={column}
-        gap='25px'
         placeSelf='center'
         >
         {work[type].map((project, index) => {
@@ -43,6 +42,7 @@ export const Work = ({ work, style }) => {
             )})}
       </Pane>
      </Pane>
+    </Pane>
 
   )
 }
