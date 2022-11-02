@@ -28,26 +28,24 @@ export const TripleSpan = ({fields}) => {
   
     return (
       <Pane
-        display='grid'
-        gridTemplateColumns='repeat(3, 1fr)'
-        gap='25px'
-        id='film'
-        placeSelf='center'
-      >
+        >
         <img
           src={leftImage.url}
           alt={leftImage.desc}
           id='3l'
+          width='33.3333%'
         />
         <img
           src={centerImage.url}
           alt={centerImage.desc}
           id='3c'
+          width='33.3333%'
         />
         <img
           src={rightImage.url}
           alt={rightImage.desc}
           id='3r'
+          width='33.3333%'
         />
       </Pane>
   )
