@@ -10,11 +10,14 @@ export function TitleCard ({ type, slug, fields }) {
 
   return (
     <Link to={{ pathname: `/${type}/${slug}` }}>
-      <Pane>
+      <Pane
+        margin={'2%'
+      }>
         {fields && (
           <img 
             src={img} 
             alt={title}
+            width='100%'
             
           />
         )}
