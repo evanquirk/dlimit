@@ -1,4 +1,5 @@
 // ProjectTypes Navigation Component
+//TODO - Create 600px Break Point (or averages) to create hamburger
 
 import React from 'react'
 import { Link } from 'react-router-dom'
