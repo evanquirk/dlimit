@@ -1,16 +1,22 @@
 // Video Component
-// TODO - Add React-Player. Create Vertical or Full rendering.
 
 import React from 'react'
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player/lazy'
+
+import { Pane } from 'evergreen-ui'
 
 export const Video = ({fields}) => {
 const { name, url, footer } = fields
   return (
+    <Pane
+        paddingTop={'2%'}
+      >
       <ReactPlayer
         url={url}
-        width='100%'
-        height='47vh'
+        light={true}
+        width={'80vw'}
+        height={'45vw'}
         />
+    </Pane>
   )
 }
