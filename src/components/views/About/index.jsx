@@ -43,7 +43,7 @@ export const About = () => {
       justifyContent='center'
       alignItems='center'
       alignContent='center'
-      width='59%'
+      width='79vw'
       margin='auto'
     >
       {!about.error
@@ -64,13 +64,13 @@ const AboutInfo = ({ about }) => {
     <>
     <Suspense fallback={<Loader />}>
 
+      <Pane is='img' src={photoSource} alt={title} width={'80vw'} paddingTop={'2%'} />
+      
       <Heading size={900} is='h1' margin='1em'>{name}</Heading>
       
-      <Pane is='img' src={photoSource} alt={title} />
-      
       <Paragraph 
-        paddingTop='3%'
         paddingBottom='1%'
+        textAlign='center'
         >
         {bio}
       </Paragraph>
@@ -78,7 +78,8 @@ const AboutInfo = ({ about }) => {
       <Link 
         href={mailTo}
         marginBottom='3%'
-        padding='1%'
+        paddingY='1%'
+        paddingX='3%'
         fontSize='large'
         border='1px blue solid'
         >
