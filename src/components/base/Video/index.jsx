@@ -20,3 +20,4 @@ const { name, url, footer } = fields
     </Pane>
   )
 }
+

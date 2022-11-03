@@ -1,8 +1,10 @@
 // Banner Component
 
-import React from 'react'
+import React from "react";
 
-export const Banner = ({banner}) => {
+export const Banner = ({ banner }) => {
+  const url = `https:${banner.fields.file.url}`;
+  const alt = banner.fields.description;
 
   const url = `https:${banner.fields.file.url}`
   const alt = banner.fields.description
@@ -15,3 +17,4 @@ export const Banner = ({banner}) => {
       />
   )
 }
+

@@ -1,16 +1,15 @@
 //Info Component for Project Page
 
-import React from 'react'
-import { Composition } from 'atomic-layout'
-import { Heading, Paragraph, Text } from 'evergreen-ui'
+import React from "react";
+import { Composition } from "atomic-layout";
+import { Heading, Paragraph, Text } from "evergreen-ui";
 
 const area = `
   title description
   roles description
-`
+`;
 
 export const Info = ({ title, roles, description }) => {
-
   return (
     <Composition
       areas={area}
@@ -20,29 +19,28 @@ export const Info = ({ title, roles, description }) => {
     >
       {({ Title, Roles, Description }) => (
         <>
-        <Title>
-          <Heading size={900}>
-            {title.toUpperCase()}
-          </Heading>
-        </Title>
-        <Roles>
-          {roles.map(({fields}) => {
-              const { preface, content } = fields
+          <Title>
+            <Heading size={900}>{title.toUpperCase()}</Heading>
+          </Title>
+          <Roles>
+            {roles.map(({ fields }) => {
+              const { preface, content } = fields;
               return (
                 <>
-                <Text><b>{preface}</b> </Text>
-                <Text>{content}</Text>
-                <br/>
+                  <Text>
+                    <b>{preface}</b>{" "}
+                  </Text>
+                  <Text>{content}</Text>
+                  <br />
                 </>
-              )
-          })
-          }
-        </Roles>
-        <Description>
-          <Paragraph>{description}</Paragraph>
-        </Description>
+              );
+            })}
+          </Roles>
+          <Description>
+            <Paragraph>{description}</Paragraph>
+          </Description>
         </>
       )}
     </Composition>
-  )
-}
+  );
+};

@@ -1,12 +1,10 @@
+import React from "react";
+import { withRouter } from "react-router";
+import Title from "./Title/Title";
+import Navigation from "./Navigation/Navigation";
+import { Pane } from "evergreen-ui";
 
-import React from 'react'
-import { withRouter } from 'react-router'
-import Title from './Title/Title'
-import Navigation from './Navigation/Navigation'
-import { Pane } from 'evergreen-ui'
-
-export const Header = ({style}) => {
-
+export const Header = ({ style }) => {
   return (
     <Pane>
       <Pane height={100} background='black' display='flex' alignItems='center' borderBottom='1px solid black'>
@@ -20,6 +18,5 @@ export const Header = ({style}) => {
         </Pane>
       </Pane>
     </Pane>
-
-  )
-}
+  );
+};
