@@ -3,9 +3,6 @@
 import React from "react";
 
 export const Banner = ({ banner }) => {
-  const url = `https:${banner.fields.file.url}`;
-  const alt = banner.fields.description;
-
   const url = `https:${banner.fields.file.url}`
   const alt = banner.fields.description
 

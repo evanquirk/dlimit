@@ -17,6 +17,7 @@ export const TripleSpan = ({ fields }) => {
     title: center.fields.title,
     desc: center.fields.description,
     url: `https:$"center.fields.file.url}`
+  }
   
   const rightImage = {
     title: right.fields.title,
