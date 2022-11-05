@@ -38,13 +38,13 @@ export const About = () => {
 
   return (
     <Pane
-      display="flex"
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
-      alignContent="center"
-      width="59%"
-      margin="auto"
+      display='flex'
+      flexDirection='column'
+      justifyContent='center'
+      alignItems='center'
+      alignContent='center'
+      width='79vw'
+      margin='auto'
     >
       {!about.error ? (
         about.bio ? (
@@ -76,18 +76,24 @@ const AboutInfo = ({ about }) => {
           {name.toUpperCase()}
         </Heading>
 
-        <Pane is="img" src={photoSource} alt={title} />
-
-        <Paragraph paddingTop="3%" paddingBottom="1%">
-          {bio}
-        </Paragraph>
-
-        <Link
-          href={mailTo}
-          marginBottom="3%"
-          padding="1%"
-          fontSize="large"
-          border="1px blue solid"
+      <Pane is='img' src={photoSource} alt={title} width={'80vw'} paddingTop={'2%'} />
+      
+      <Heading size={900} is='h1' margin='1em'>{name}</Heading>
+      
+      <Paragraph 
+        paddingBottom='1%'
+        textAlign='center'
+        >
+        {bio}
+      </Paragraph>
+      
+      <Link 
+        href={mailTo}
+        marginBottom='3%'
+        paddingY='1%'
+        paddingX='3%'
+        fontSize='large'
+        border='1px blue solid'
         >
           Say Hello
         </Link>

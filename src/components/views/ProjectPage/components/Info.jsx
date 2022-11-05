@@ -11,7 +11,12 @@ const area = `
 
 export const Info = ({ title, roles, description }) => {
   return (
-    <Composition areas={area} templateCols="1fr 1fr" marginHorizontal="5%">
+    <Composition
+      areas={area}
+      templateCols='1fr 1fr'
+      marginHorizontal='5%'
+      marginVertical='5%'
+    >
       {({ Title, Roles, Description }) => (
         <>
           <Title>

@@ -1,4 +1,5 @@
 // ProjectTypes Navigation Component
+//TODO - Create 600px Break Point (or averages) to create hamburger
 
 import React from "react";
 import { Link } from "react-router-dom";
@@ -9,15 +10,15 @@ export const ProjectTypes = ({ style }) => {
   const { home, graphics, videos, objects, photos } = style;
 
   return (
-    <Pane display="flex">
-      <Pane
-        flex={1}
-        justifyContent="center"
-        display="grid"
-        gridTemplateColumns="auto auto auto auto auto"
-        gridGap="4.2em"
-        marginTop="5em"
-        marginBottom="3em"
+    <Pane display='flex'>
+      <Pane 
+        flex={1} 
+        justifyContent='center' 
+        display='grid'
+        gridTemplateColumns='auto auto auto auto auto'
+        gridGap='5%'
+        marginTop='6%' 
+        marginBottom='2%'
       >
         <Link to="/" style={{ textDecoration: "none" }}>
           <ProjectButton background-color={home}>WORK</ProjectButton>

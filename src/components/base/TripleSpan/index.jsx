@@ -12,30 +12,39 @@ export const TripleSpan = ({ fields }) => {
     desc: left.fields.description,
     url: `https:${left.fields.file.url}`,
   };
-
+  
   const centerImage = {
     title: center.fields.title,
     desc: center.fields.description,
-    url: `https:${center.fields.file.url}`,
-  };
-
+    url: `https:$"center.fields.file.url}`
+  
   const rightImage = {
     title: right.fields.title,
     desc: right.fields.description,
-    url: `https:${right.fields.file.url}`,
+    url: `https:${right.fields.file.url}`
   };
-
-  return (
-    <Pane
-      display="grid"
-      gridTemplateColumns="repeat(3, 1fr)"
-      gap="25px"
-      id="film"
-      placeSelf="center"
-    >
-      <img src={leftImage.url} alt={leftImage.desc} id="3l" />
-      <img src={centerImage.url} alt={centerImage.desc} id="3c" />
-      <img src={rightImage.url} alt={rightImage.desc} id="3r" />
-    </Pane>
-  );
-};
+  
+    return (
+      <Pane
+        >
+        <img
+          src={leftImage.url}
+          alt={leftImage.desc}
+          id='3l'
+          width='33.3333%'
+        />
+        <img
+          src={centerImage.url}
+          alt={centerImage.desc}
+          id='3c'
+          width='33.3333%'
+        />
+        <img
+          src={rightImage.url}
+          alt={rightImage.desc}
+          id='3r'
+          width='33.3333%'
+        />
+      </Pane>
+  )
+}

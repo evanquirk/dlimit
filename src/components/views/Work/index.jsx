@@ -15,20 +15,22 @@ export const Work = ({ work, style }) => {
     : (column = "repeat(1, 1fr)");
 
   return (
+    <Pane>
     <Pane
-      display="flex"
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
-      margin="auto"
-    >
-      <ProjectTypes style={style} />
+      display='flex'
+      flexDirection='column'
+      justifyContent='center'
+      alignItems='center'
+      margin='auto'
+      >
+      <ProjectTypes style={style}/>
+
       <Pane
         display="grid"
         gridTemplateColumns={column}
-        gap="25px"
-        placeSelf="center"
-      >
+        placeSelf='center'
+        >
+
         {work[type].map((project, index) => {
           const { type, slug, card } = project;
           if (!type) {
@@ -44,6 +46,8 @@ export const Work = ({ work, style }) => {
           );
         })}
       </Pane>
+     </Pane>
     </Pane>
-  );
-};
+
+  )
+}
